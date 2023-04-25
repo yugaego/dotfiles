@@ -18,7 +18,8 @@ function fish_prompt --description 'Write out the prompt'
     # Write pipestatus
     # If the status was carried over (if no command is issued or if `set` leaves the status untouched), don't bold it.
     set -l bold_flag --bold
-    set -q __fish_prompt_status_generation; or set -g __fish_prompt_status_generation $status_generation
+    set -q __fish_prompt_status_generation
+    or set -g __fish_prompt_status_generation $status_generation
     if test $__fish_prompt_status_generation = $status_generation
         set bold_flag
     end
@@ -27,7 +28,14 @@ function fish_prompt --description 'Write out the prompt'
     set -l statusb_color (set_color $bold_flag $fish_color_status)
     set -l prompt_status (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
 
-    echo -n -s (set_color $color_cwd) (prompt_pwd) $normal
-    echo -s (fish_vcs_prompt) $normal " "$prompt_status
-    echo -n $suffix' '
+    # Don't shorten the working directory.
+    set -q fish_prompt_pwd_dir_length
+    or set -lx fish_prompt_pwd_dir_length 0
+
+    # Configure Git status output.
+    set -q __fish_git_prompt_show_informative_status
+    or set -lx __fish_git_prompt_show_informative_status 1
+
+    echo (set_color $color_cwd)(prompt_pwd) (set_color yellow)(fish_vcs_prompt)
+    echo -n $suffix" "
 end
