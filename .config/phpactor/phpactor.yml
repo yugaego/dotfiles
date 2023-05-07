@@ -1,0 +1,12 @@
+language_server.diagnostics_on_save: true
+language_server_phpstan.level: 5
+# language_server.diagnostic_sleep_time: 500
+# language_server_phpstan.enabled: true
+# language_server_phpstan.bin: "/usr/local/opt/phpstan/bin/phpstan"
+#composer.autoloader_path: "%project_root%\/protected\/vendor\/autoload.php"
+#logging.enabled: true
+#logging.level: DEBUG
+#logging.formatter: pretty
+#logging.path: phpactor.log
+# use with $ phpactor rpc --replay
+#rpc.store_replay: true
