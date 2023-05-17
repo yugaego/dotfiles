@@ -21,4 +21,7 @@
 ## Add directories to $PATH (via $fish_user_paths).
 ## Either run once in CLI or uncomment in this file.
 ## https://fishshell.com/docs/current/cmds/fish_add_path.html
+## Macports
 # fish_add_path /opt/local/bin /opt/local/sbin
+## Rust
+# fish_add_path $HOME/.cargo/bin
