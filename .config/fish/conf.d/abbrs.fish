@@ -1,4 +1,5 @@
 abbr --add gb 'git branch'
+abbr --add gr 'git remote'
 abbr --add go 'git switch'
 abbr --add gs 'git status'
 abbr --add gd 'git diff'
