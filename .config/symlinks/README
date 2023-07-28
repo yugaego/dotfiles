@@ -1,0 +1,3 @@
+ln -s ~/.config/symlinks/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+
+ln -s ~/.config/symlinks/com.local.KeyRemapping.plist ~/Library/LaunchAgents/com.local.KeyRemapping.plist
