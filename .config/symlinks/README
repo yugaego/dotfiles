@@ -1,5 +1,5 @@
 ln -s ~/.config/symlinks/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
 
-ln -s ~/.config/symlinks/com.local.KeyRemapping.plist ~/Library/LaunchAgents/com.local.KeyRemapping.plist
+ln -s ~/.config/symlinks/local.KeyRemapping.plist ~/Library/LaunchAgents/local.KeyRemapping.plist
 
 sudo ln -s ~/.config/symlinks/local.org.macports.apache2.plist /Library/LaunchDaemons/local.org.macports.apache2.plist
