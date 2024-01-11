@@ -9,6 +9,15 @@
 	<string>/opt/local/etc/LaunchDaemons/org.macports.apache2/apache2.wrapper</string>
 	<string>start</string>
 </array>
+<key>EnvironmentVariables</key>
+<dict>
+        <key>XPC_SERVICES_UNAVAILABLE</key>
+        <string>1</string>
+<!-- http://sealiesoftware.com/blog/archive/2017/6/5/Objective-C_and_fork_in_macOS_1013.html -->
+        <key>OBJC_DISABLE_INITIALIZE_FORK_SAFETY</key>
+        <string>YES</string>
+</dict>
 <key>RunAtLoad</key><true/>
+<key>KeepAlive</key><true/>
 </dict>
 </plist>
