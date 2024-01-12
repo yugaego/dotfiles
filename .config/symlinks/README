@@ -2,4 +2,9 @@ ln -s ~/.config/symlinks/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKey
 
 ln -s ~/.config/symlinks/local.KeyRemapping.plist ~/Library/LaunchAgents/local.KeyRemapping.plist
 
+
+*** Workaround to start Apache on (re)boot
+
+See https://trac.macports.org/ticket/36101
+
 sudo ln -s ~/.config/symlinks/local.org.macports.apache2.plist /Library/LaunchDaemons/local.org.macports.apache2.plist
