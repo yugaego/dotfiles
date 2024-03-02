@@ -26,7 +26,7 @@ function sphp -d "Switch between Macports PHP 7 and PHP 8 packages"
         sudo "$apxsPath" -a -e -n $module $ext
 
         # Install Phpactor source from branch that supports the requested PHP version.
-        cd ~/Sources/phpactor; git switch $package; composer install --prefer-dist
+        cd ~/Sources/phpactor; git switch $package; composer install --prefer-dist -q
     else
         echo "Enter Macports PHP package number to enable (f.i. 74 or 81)"
     end
