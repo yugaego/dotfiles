@@ -15,7 +15,6 @@ function sphp -d "Switch between Macports PHP 7 and PHP 8 packages"
 
         # Switch to the requested PHP port.
         sudo port select php $package
-        echo -e "\n$(php --version)"
 
         # Toggle Apache PHP module in use.
         set modulePath /opt/local/lib/apache2/modules/
@@ -24,9 +23,20 @@ function sphp -d "Switch between Macports PHP 7 and PHP 8 packages"
         set extDisable "$modulePath"mod_"$packageDisable".so
         sudo "$apxsPath" -A -e -n $moduleDisable $extDisable
         sudo "$apxsPath" -a -e -n $module $ext
+        sudo apachectl -k restart
 
-        # Install Phpactor source from branch that supports the requested PHP version.
-        cd ~/Sources/phpactor; git switch $package; composer install --prefer-dist -q
+        # Install Phpactor from branch that supports the requested PHP version.
+        echo "Enabling corresponding Phpactor version."
+        pushd ~/Sources/phpactor
+        git switch $package
+        composer install --prefer-dist -q
+        popd
+
+        echo (set_color cyan)"Finished enabling: "
+        echo "$(php --version)"
+
+        # Start Apache again, to make sure it's up and running.
+        sudo apachectl -k start
     else
         echo "Enter Macports PHP package number to enable (f.i. 74 or 81)"
     end
