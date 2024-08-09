@@ -1,6 +1,6 @@
 ln -s ~/.config/symlinks/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
 
-ln -s ~/.config/symlinks/local.KeyRemapping.plist ~/Library/LaunchAgents/local.KeyRemapping.plist
+sudo ln -s ~/.config/symlinks/local.KeyRemapping.plist /Library/LaunchDaemons/local.KeyRemapping.plist
 
 
 *** Workaround to start Apache on (re)boot
