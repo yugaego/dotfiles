@@ -7,7 +7,7 @@
 
 ## For example, to disable fish greeting once and for all,
 ## run in CLI once:
-## $ set -U fish_greeting
+## set -U fish_greeting
 
 ## To configure fish greeting in this file "dynamically",
 ## edit and uncomment the following line:
@@ -25,3 +25,6 @@
 # fish_add_path /opt/local/bin /opt/local/sbin
 ## Rust
 # fish_add_path $HOME/.cargo/bin
+
+## Remove first listed directory from $PATH
+# set -e fish_user_paths[1]
