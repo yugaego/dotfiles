@@ -1,2 +1,17 @@
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main
+
+## Put sensitive configs into a non version controlled file,
+## such as ~/.gitconfig
+# [user]
+# 	name = Committer Name
+# 	email = commiter@example.org
+# 	signingKey = ****************
+
+## Automatically sign all commits.
+## Enable per repository with
+## git config commit.gpgsign true
+# [commit]
+# 	gpgsign = true
