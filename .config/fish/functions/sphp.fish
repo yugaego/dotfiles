@@ -28,6 +28,10 @@ function sphp -d "Switch between Macports PHP 7 and PHP 8 packages"
         # Install Phpactor from branch that supports the requested PHP version.
         echo "Enabling corresponding Phpactor version."
         pushd ~/Sources/phpactor
+        set branchExists (git branch --list $package)
+        if test -z "$branchExists"
+            set package "master"
+        end
         git switch $package
         composer install --prefer-dist -q
         popd
