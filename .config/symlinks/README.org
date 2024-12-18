@@ -1,10 +1,47 @@
-ln -s ~/.config/symlinks/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+This directory contains files that may be symlinked or used as examples for
+setting up additional macOS-related features.
 
-sudo ln -s ~/.config/symlinks/local.KeyRemapping.plist /Library/LaunchDaemons/local.KeyRemapping.plist
+* DefaultKeyBinding.dict
+
+This file contains configurations for emulation of Emacs keybindings in macOS.
+
+Source: https://github.com/jrus/cocoa-text-system/blob/master/cocoa-text.md.
+
+To symlink the file, run
+
+=ln -s ~/.config/symlinks/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict=
 
 
-*** Workaround to start Apache on (re)boot
+* local.KeyRemapping.plist
 
-See https://trac.macports.org/ticket/36101
+Use this plist to remap function keys F5 and F6 to change macOS keyboard brightness.
 
-sudo ln -s ~/.config/symlinks/local.org.macports.apache2.plist /Library/LaunchDaemons/local.org.macports.apache2.plist
+For more details, see https://gitlab.com/-/snippets/2519568.
+
+To symlink the file, run
+
+=sudo ln -s ~/.config/symlinks/local.KeyRemapping.plist /Library/LaunchDaemons/local.KeyRemapping.plist=
+
+
+* local.org.macports.apache2.plist
+
+This file contains two optional workarounds for the major Apache issues that
+could be experienced on macOS.
+
+** Auto-start Macports Apache on (re)boot
+
+On boot, force call of
+
+=/opt/local/etc/LaunchDaemons/org.macports.apache2/apache2.wrapper=
+
+See https://trac.macports.org/ticket/36101 with the issue described.
+
+To symlink the file, run
+
+=sudo ln -s ~/.config/symlinks/local.org.macports.apache2.plist /Library/LaunchDaemons/local.org.macports.apache2.plist=
+
+** Prevent web server crash
+
+The workaround consists of setting an environment variable =OBJC_DISABLE_INITIALIZE_FORK_SAFETY= to =Yes=.
+
+See the ticket https://trac.macports.org/ticket/68817 for more details.
