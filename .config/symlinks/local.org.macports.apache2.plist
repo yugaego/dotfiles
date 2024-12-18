@@ -11,7 +11,6 @@
 </array>
 <key>EnvironmentVariables</key>
 <dict>
-  I don't remember why I have this 
         <key>XPC_SERVICES_UNAVAILABLE</key>
         <string>1</string>
         <!-- http://sealiesoftware.com/blog/archive/2017/6/5/Objective-C_and_fork_in_macOS_1013.html -->
