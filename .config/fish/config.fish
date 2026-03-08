@@ -18,6 +18,10 @@
 #     fish_config theme choose lava
 # end
 
+set -gx LANG en_US.UTF-8
+set -gx LC_ALL en_US.UTF-8
+set -gx LESSCHARSET utf-8
+
 ## Add directories to $PATH (via $fish_user_paths).
 ## Either run once in CLI or uncomment in this file.
 ## https://fishshell.com/docs/current/cmds/fish_add_path.html
