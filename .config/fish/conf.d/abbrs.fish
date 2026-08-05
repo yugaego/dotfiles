@@ -15,3 +15,5 @@ abbr --add grpo 'git remote prune origin --dry-run'
 abbr --add gl 'git log'
 abbr --add gla 'git log --all --graph --oneline --decorate -12'
 abbr --add gld 'git log --graph --pretty=format:"%C(auto)%h%Creset %C(cyan)%cs%Creset %s"'
+abbr --add dt 'date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"'
+abbr --add ls "ls -lhFG"
