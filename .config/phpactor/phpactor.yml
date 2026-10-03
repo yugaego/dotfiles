@@ -1,6 +1,6 @@
 language_server.diagnostics_on_save: true
 language_server_phpstan.level: 5
-language_server.diagnostic_ignore_codes: ["worse.missing_return_type", "worse.docblock_missing_param"]
+language_server.diagnostic_ignore_codes: ["worse.missing_return_type", "worse.docblock_missing_param", "worse.docblock_missing_return_type"]
 # language_server.diagnostic_sleep_time: 500
 # language_server_phpstan.enabled: true
 # language_server_phpstan.bin: "/usr/local/opt/phpstan/bin/phpstan"
